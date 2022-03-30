@@ -7,7 +7,7 @@ services:
     ports:
         - 5432:5432
     environment:
-        - POSTGRES_PASSWORD=STRONG_PASSWORD_FROM_ENV
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?err}
     volumes:
       - type: bind
         source: /zfs_master/docker/data/postgres14
@@ -24,7 +24,7 @@ services:
         - 1433:1433
     environment:
         - ACCEPT_EULA=Y
-        - SA_PASSWORD=STRONG_PASSWORD_FROM_ENV
+        - SA_PASSWORD=${MSSQL_PASSWORD:?err}
     volumes:
       - type: bind
         source: /zfs_master/docker/data/mssql2019
