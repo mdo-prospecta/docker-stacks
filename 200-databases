@@ -1,0 +1,38 @@
+version: '3'
+services:
+  postgres14:
+    restart: unless-stopped
+    image: postgres:14
+    container_name: postgres14
+    ports:
+        - 5432:5432
+    environment:
+        - POSTGRES_PASSWORD=STRONG_PASSWORD_FROM_ENV
+    volumes:
+      - type: bind
+        source: /zfs_master/docker/data/postgres14
+        target: /var/lib/postgresql/data
+    networks:
+      vlan10:
+        ipv4_address: "192.168.10.20"
+        
+  mssql2019:
+    restart: unless-stopped
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: mssql2019
+    ports:
+        - 1433:1433
+    environment:
+        - ACCEPT_EULA=Y
+        - SA_PASSWORD=STRONG_PASSWORD_FROM_ENV
+    volumes:
+      - type: bind
+        source: /zfs_master/docker/data/mssql2019
+        target: /var/opt/mssql/data
+    networks:
+      vlan10:
+        ipv4_address: "192.168.10.21"
+        
+networks:
+  vlan10:
+    external: true
