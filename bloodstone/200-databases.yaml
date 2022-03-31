@@ -1,0 +1,22 @@
+version: '3'
+services:
+  mssql2019:
+    restart: unless-stopped
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: mssql2019
+    ports:
+        - 1433:1433
+    environment:
+        - ACCEPT_EULA=Y
+        - SA_PASSWORD=${MSSQL_PASSWORD:?err}
+    volumes:
+      - type: bind
+        source: /zfs_master/docker/data/mssql2019
+        target: /var/opt/mssql/data
+    networks:
+      vlan10:
+        ipv4_address: "192.168.10.21"
+        
+networks:
+  vlan10:
+    external: true
