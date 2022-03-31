@@ -7,7 +7,7 @@ services:
     hostname: rabbitmq01
     command: bash -c "rabbitmq-plugins enable rabbitmq_management rabbitmq_stomp && rabbitmq-server"
     environment:
-      - RABBITMQ_ERLANG_COOKIE='STRONG_COOKIE'
+      - RABBITMQ_ERLANG_COOKIE=${RMQ_COOKIE:?err}
       - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/custom/rmq-cluster.conf
     volumes:
       - type: bind
@@ -26,7 +26,7 @@ services:
     hostname: rabbitmq02
     command: bash -c "rabbitmq-plugins enable rabbitmq_management rabbitmq_stomp && rabbitmq-server"
     environment:
-      - RABBITMQ_ERLANG_COOKIE='STRONG_COOKIE'
+      - RABBITMQ_ERLANG_COOKIE=${RMQ_COOKIE:?err}
       - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/custom/rmq-cluster.conf
     volumes:
       - type: bind
