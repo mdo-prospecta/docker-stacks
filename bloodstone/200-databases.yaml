@@ -15,7 +15,7 @@ services:
         target: /var/opt/mssql/data
     networks:
       vlan10:
-        ipv4_address: "192.168.10.21"
+        ipv4_address: "192.168.10.113"
         
 networks:
   vlan10:
