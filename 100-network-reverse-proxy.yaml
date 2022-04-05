@@ -1,0 +1,54 @@
+version: '2.4'
+services:
+
+  nginx01:
+    image: nginx:latest
+    container_name: nginx01
+    restart: unless-stopped
+    ports:
+      - 443:443
+      - 80:80
+    volumes:
+      - type: bind
+        source: /zfs_master/docker/data/nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
+      - type: bind
+        source: /zfs_master/docker/data/nginx/templates
+        target: /etc/nginx/templates
+        read_only: true
+    networks:
+      vlan10:
+        ipv4_address: 192.168.10.101
+        
+  nginx02:
+    image: nginx:latest
+    container_name: nginx02
+    restart: unless-stopped
+    ports:
+      - 443:443
+      - 80:80
+    volumes:
+      - type: bind
+        source: /zfs_master/docker/data/nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
+      - type: bind
+        source: /zfs_master/docker/data/nginx/templates
+        target: /etc/nginx/templates
+        read_only: true
+    networks:
+      vlan10:
+        ipv4_address: 192.168.10.102
+        
+networks:
+  vlan10:
+    name: vlan10
+    driver: macvlan
+    driver_opts:
+      parent: bridge10
+    ipam:
+      config:
+        - subnet: "192.168.10.0/24"
+          ip_range: "192.168.10.1/24"
+          gateway: "192.168.10.1"
