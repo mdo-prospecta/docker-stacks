@@ -2,6 +2,7 @@ version: '3'
 services:
   opensearch-node1:
     image: opensearchproject/opensearch:1.0.1
+    restart: unless-stopped
     container_name: opensearch-node1
     environment:
       - cluster.name=opensearch-cluster
@@ -29,6 +30,7 @@ services:
         ipv4_address: "192.168.10.107"
   opensearch-node2:
     image: opensearchproject/opensearch:1.0.1
+    restart: unless-stopped
     container_name: opensearch-node2
     environment:
       - cluster.name=opensearch-cluster
@@ -56,6 +58,7 @@ services:
         ipv4_address: "192.168.10.108"
   opensearch-node3:
     image: opensearchproject/opensearch:1.0.1
+    restart: unless-stopped
     container_name: opensearch-node3
     environment:
       - cluster.name=opensearch-cluster
@@ -83,6 +86,7 @@ services:
         ipv4_address: "192.168.10.109"
   opensearch-dashboards:
     image: opensearchproject/opensearch-dashboards:1.0.1
+    restart: unless-stopped
     container_name: opensearch-dashboards
     ports:
       - 5601:5601
