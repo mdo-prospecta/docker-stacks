@@ -1,12 +1,4 @@
-# docker-stacks
-Docker stacks
-
-# Running portainer on host networking mode
-sudo docker run -d \
-  --network host \
-  --name portainer --restart=always \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -v /zfs_master/docker/data/portainer:/data portainer/portainer-ce:latest
+# Prospecta On Prem Docker Stacks
 
 # Obsidian
 | Container      |       IP        |
@@ -35,3 +27,10 @@ sudo docker run -d \
 | elastic79      | 192.168.10.88   |
 | elastic79      | 192.168.10.89   |
 | sftp           | 192.168.10.91   |
+
+# Running portainer on host networking mode
+sudo docker run -d \
+  --network host \
+  --name portainer --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /zfs_master/docker/data/portainer:/data portainer/portainer-ce:latest
