@@ -1,0 +1,19 @@
+version: '3'
+services:
+  sftp:
+    image: atmoz/sftp
+    ports:
+      - "2222:22"
+    command: foo:pass:1001
+    volumes:
+      - type: bind
+        source: /zfs_master/share
+        target: /zfs_share
+        read_only: true
+    networks:
+      vlan10:
+        ipv4_address: "192.168.10.222"
+    
+networks:
+  vlan10:
+    external: true
