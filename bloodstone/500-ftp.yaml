@@ -3,7 +3,7 @@ services:
   sftp:
     image: atmoz/sftp
     ports:
-      - 2222:22
+      - "2222:22"
     command: ${SFTP_USERNAME:?err}:${SFTP_PASSWORD:?err}:1001
     volumes:
       - type: bind
