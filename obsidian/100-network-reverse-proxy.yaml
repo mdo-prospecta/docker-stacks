@@ -19,7 +19,7 @@ services:
         read_only: true
     networks:
       vlan10:
-        ipv4_address: 192.168.10.51
+        ipv4_address: 192.168.10.41
         
   nginx02:
     image: nginx:latest
@@ -39,7 +39,7 @@ services:
         read_only: true
     networks:
       vlan10:
-        ipv4_address: 192.168.10.52
+        ipv4_address: 192.168.10.42
         
 networks:
   vlan10:
