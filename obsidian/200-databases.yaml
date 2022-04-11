@@ -12,6 +12,10 @@ services:
       - type: bind
         source: /zfs_master/docker/data/postgres14
         target: /var/lib/postgresql/data
+      - type: bind
+        source: /zfs_master/share
+        target: /zfs_share
+        read_only: true
     networks:
       vlan10:
         ipv4_address: "192.168.10.104"
