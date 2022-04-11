@@ -2,6 +2,8 @@ version: '3'
 services:
   sftp:
     image: atmoz/sftp
+    container_name: sftp
+    restart: unless-stopped
     ports:
       - "2222:22"
     command: ${SFTP_USERNAME:?err}:${SFTP_PASSWORD:?err}:1001
