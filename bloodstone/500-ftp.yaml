@@ -3,12 +3,12 @@ services:
   sftp:
     image: atmoz/sftp
     ports:
-      - "2222:22"
-    command: foo:pass:1001
+      - 2222:22
+    command: ${SFTP_USERNAME:?err}:${SFTP_PASSWORD:?err}:1001
     volumes:
       - type: bind
         source: /zfs_master/share
-        target: /zfs_share
+        target: /home/${SFTP_USERNAME:?err}/share
         read_only: true
     networks:
       vlan10:
