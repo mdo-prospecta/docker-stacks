@@ -23,7 +23,7 @@ services:
       - 9200:9200
     networks:
       vlan10:
-        ipv4_address: 192.168.10.116
+        ipv4_address: 192.168.10.87
   es02:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3
     restart: unless-stopped
@@ -45,7 +45,7 @@ services:
         target: /usr/share/elasticsearch/data
     networks:
       vlan10:
-        ipv4_address: 192.168.10.117
+        ipv4_address: 192.168.10.88
   es03:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3
     restart: unless-stopped
@@ -67,7 +67,7 @@ services:
         target: /usr/share/elasticsearch/data
     networks:
       vlan10:
-        ipv4_address: 192.168.10.118
+        ipv4_address: 192.168.10.89
 
 networks:
   vlan10:
