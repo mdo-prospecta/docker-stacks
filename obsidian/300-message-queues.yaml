@@ -18,7 +18,7 @@ services:
         - 15672:15672
     networks:
       vlan10:
-        ipv4_address: "192.168.10.105"
+        ipv4_address: "192.168.10.55"
   rabbitmq02:
     restart: unless-stopped
     image: rabbitmq:3.9-alpine
@@ -37,7 +37,7 @@ services:
         - 15672:15672
     networks:
       vlan10:
-        ipv4_address: "192.168.10.106"
+        ipv4_address: "192.168.10.56"
 
 networks:
   vlan10:
