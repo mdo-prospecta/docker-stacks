@@ -18,7 +18,7 @@ services:
         read_only: true
     networks:
       vlan10:
-        ipv4_address: "192.168.10.53"
+        ipv4_address: "192.168.10.43"
         
   mssql2019:
     restart: unless-stopped
@@ -39,7 +39,7 @@ services:
         read_only: true
     networks:
       vlan10:
-        ipv4_address: "192.168.10.54"
+        ipv4_address: "192.168.10.44"
         
 networks:
   vlan10:
