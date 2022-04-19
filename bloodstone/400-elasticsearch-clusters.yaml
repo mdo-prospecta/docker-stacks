@@ -11,6 +11,7 @@ services:
       - cluster.initial_master_nodes=es01,es02,es03
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms2048m -Xmx2048m"
+      - path.repo=/snapshot_repository
     ulimits:
       memlock:
         soft: -1
@@ -21,7 +22,7 @@ services:
         target: /usr/share/elasticsearch/data
       - type: bind
         source: /zfs_master/share/es79-repository
-        target: /repository
+        target: /snapshot_repository
     ports:
       - 9200:9200
     networks:
@@ -38,6 +39,7 @@ services:
       - cluster.initial_master_nodes=es01,es02,es03
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms2048m -Xmx2048m"
+      - path.repo=/snapshot_repository
     ulimits:
       memlock:
         soft: -1
@@ -48,7 +50,7 @@ services:
         target: /usr/share/elasticsearch/data
       - type: bind
         source: /zfs_master/share/es79-repository
-        target: /repository
+        target: /snapshot_repository
     networks:
       vlan10:
         ipv4_address: 192.168.10.88
@@ -63,6 +65,7 @@ services:
       - cluster.initial_master_nodes=es01,es02,es03
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms2048m -Xmx2048m"
+      - path.repo=/snapshot_repository
     ulimits:
       memlock:
         soft: -1
@@ -73,7 +76,7 @@ services:
         target: /usr/share/elasticsearch/data
       - type: bind
         source: /zfs_master/share/es79-repository
-        target: /repository
+        target: /snapshot_repository
     networks:
       vlan10:
         ipv4_address: 192.168.10.89
