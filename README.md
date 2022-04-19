@@ -27,6 +27,9 @@
 | elastic79      | 192.168.10.88   |
 | elastic79      | 192.168.10.89   |
 | sftp           | 192.168.10.91   |
+| spark-livy     | 192.168.10.95   |
+| spark-worker   | 192.168.10.96   |
+
 
 # Running portainer on host networking mode
 sudo docker run -d \
