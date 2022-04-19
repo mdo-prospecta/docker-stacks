@@ -1,12 +1,14 @@
 version: "3.7"
 services:
   spark-master:
-    image: bitnami/spark:3.2.1
+    image: prospecta/bitnami-spark-livy:3.2.1
     restart: unless-stopped
     container_name: spark-master
     hostname: spark-master
     ports:
       - "8080:8080"
+      - "8998:8998"
+      - "7077:7077"
     environment:
       - SPARK_MODE=master
       - SPARK_RPC_AUTHENTICATION_ENABLED=no
