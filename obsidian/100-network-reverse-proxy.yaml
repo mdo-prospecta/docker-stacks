@@ -46,7 +46,7 @@ services:
         read_only: true
       - type: bind
         source: /zfs_master/share
-        target: /zfs_master/share
+        target: /etc/nginx/html/share
         read_only: true
     networks:
       vlan10:
