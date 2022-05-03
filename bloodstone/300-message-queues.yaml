@@ -8,7 +8,7 @@ services:
     #command: bash -c "rabbitmq-plugins enable rabbitmq_stomp && rabbitmq-server"
     environment:
       - RABBITMQ_ERLANG_COOKIE=${RMQ_COOKIE:?err}
-      - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/custom/rmq-cluster.conf
+      - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/custom/rmq-cluster
     volumes:
       - type: bind
         source: /zfs_master/docker/data/rabbitmq39
@@ -27,7 +27,7 @@ services:
     #command: bash -c "rabbitmq-plugins enable rabbitmq_stomp && rabbitmq-server"
     environment:
       - RABBITMQ_ERLANG_COOKIE=${RMQ_COOKIE:?err}
-      - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/custom/rmq-cluster.conf
+      - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/custom/rmq-cluster
     volumes:
       - type: bind
         source: /zfs_master/docker/data/rabbitmq39
