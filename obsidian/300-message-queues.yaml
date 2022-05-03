@@ -2,13 +2,13 @@ version: "3.2"
 services:
   rabbitmq01:
     restart: unless-stopped
-    image: rabbitmq:3.9-alpine
+    image: rabbitmq:3.7-alpine
     container_name: rabbitmq01
     hostname: rabbitmq01
     command: bash -c "rabbitmq-plugins enable rabbitmq_management rabbitmq_stomp && rabbitmq-server"
     environment:
       - RABBITMQ_ERLANG_COOKIE=${RMQ_COOKIE:?err}
-      - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/custom/rmq-cluster.conf
+      - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/custom/rmq-cluster
     volumes:
       - type: bind
         source: /zfs_master/docker/data/rabbitmq39
@@ -21,13 +21,13 @@ services:
         ipv4_address: "192.168.10.45"
   rabbitmq02:
     restart: unless-stopped
-    image: rabbitmq:3.9-alpine
+    image: rabbitmq:3.7-alpine
     container_name: rabbitmq02
     hostname: rabbitmq02
     command: bash -c "rabbitmq-plugins enable rabbitmq_management rabbitmq_stomp && rabbitmq-server"
     environment:
       - RABBITMQ_ERLANG_COOKIE=${RMQ_COOKIE:?err}
-      - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/custom/rmq-cluster.conf
+      - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/custom/rmq-cluster
     volumes:
       - type: bind
         source: /zfs_master/docker/data/rabbitmq39
