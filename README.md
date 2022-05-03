@@ -3,8 +3,7 @@
 # Obsidian
 | Container      |       IP        |
 | :--            |       :--:      |
-| nginx01        | 192.168.10.41   |
-| nginx02        | 192.168.10.42   |
+| haproxy01      | 192.168.10.40   |
 | postgres14     | 192.168.10.43   |
 | mssql2019      | 192.168.10.44   |
 | rabbitmq01     | 192.168.10.45   |
@@ -28,7 +27,8 @@
 | elastic79      | 192.168.10.89   |
 | sftp           | 192.168.10.91   |
 | spark-livy     | 192.168.10.95   |
-| spark-worker   | 192.168.10.96   |
+| spark-worker1  | 192.168.10.96   |
+| spark-worker2  | 192.168.10.97   |
 
 
 # Running portainer on host networking mode
