@@ -2,10 +2,10 @@ version: "3.2"
 services:
   rabbitmq01:
     restart: unless-stopped
-    image: rabbitmq:3.7-management
+    image: rabbitmq:3.7-alpine
     container_name: rabbitmq01
     hostname: rabbitmq01
-    #command: bash -c "rabbitmq-plugins enable rabbitmq_stomp && rabbitmq-server"
+    command: bash -c "rabbitmq-plugins enable rabbitmq_management rabbitmq_stomp && rabbitmq-server"
     environment:
       - RABBITMQ_ERLANG_COOKIE=${RMQ_COOKIE:?err}
       - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/custom/rmq-cluster
@@ -21,10 +21,10 @@ services:
         ipv4_address: "192.168.10.85"
   rabbitmq02:
     restart: unless-stopped
-    image: rabbitmq:3.7-management
+    image: rabbitmq:3.7-alpine
     container_name: rabbitmq02
     hostname: rabbitmq02
-    #command: bash -c "rabbitmq-plugins enable rabbitmq_stomp && rabbitmq-server"
+    command: bash -c "rabbitmq-plugins enable rabbitmq_management rabbitmq_stomp && rabbitmq-server"
     environment:
       - RABBITMQ_ERLANG_COOKIE=${RMQ_COOKIE:?err}
       - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/custom/rmq-cluster
