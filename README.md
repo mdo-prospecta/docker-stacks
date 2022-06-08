@@ -37,3 +37,10 @@ sudo docker run -d \
   --name portainer --restart=always \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /zfs_master/docker/data/portainer:/data portainer/portainer-ce:latest
+
+
+# Docker run  commands for Master & Worker Node 
+Master docker run -p 127.0.0.1:8080:8080 -p 127.0.0.1:7077:7077 -p 127.0.0.1:6066:6066 -p 127.0.0.1:8998:8998 <image>
+
+Worker docker run -e SPARK_MASTER=spark://<master-host-ip>:7077 -p 127.0.0.1:8081:8081 <image>
+
