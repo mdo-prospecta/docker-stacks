@@ -26,9 +26,9 @@
 | elastic79      | 192.168.10.88   |
 | elastic79      | 192.168.10.89   |
 | sftp           | 192.168.10.91   |
-| spark-livy     | 192.168.10.95   |
-| spark-worker1  | 192.168.10.96   |
-| spark-worker2  | 192.168.10.97   |
+| spark-livy     | 192.168.10.106  |
+| spark-worker1  | 192.168.10.92   |
+| spark-worker2  | 192.168.10.93   |
 
 
 # Running portainer on host networking mode
