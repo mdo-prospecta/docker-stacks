@@ -3,8 +3,8 @@ services:
   spark-master:
     image: prospecta/spark-livy
     restart: unless-stopped
-    container_name: spark-master1
-    hostname: spark-master1
+    container_name: spark-master
+    hostname: spark-master
     ports:
       - "8080:8080"
       - "8998:8998"
@@ -20,12 +20,12 @@ services:
   spark-worker-1:
     image: prospecta/spark-livy
     restart: unless-stopped
-    container_name: spark-worker
+    container_name: spark-worker1
     hostname: spark-worker
     ports:
       - "8081:8081"
     environment:   
-      - SPARK_MASTER=spark://spark-master1:7077
+      - SPARK_MASTER=spark://spark-master:7077
     volumes:
       - type: bind
         source: /zfs_master/share/spark
@@ -41,7 +41,7 @@ services:
     ports:
       - "8081:8081"
     environment:
-      - SPARK_MASTER=spark://spark-master1:7077
+      - SPARK_MASTER=spark://spark-master:7077
     volumes:
       - type: bind
         source: /zfs_master/share/spark
