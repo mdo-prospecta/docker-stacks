@@ -1,7 +1,7 @@
 version: '3'
 services:
   opensearch-node1:
-    image: opensearchproject/opensearch:1.0.1
+    image: opensearchproject/opensearch:1.2.4
     restart: unless-stopped
     container_name: opensearch-node1
     environment:
@@ -29,7 +29,7 @@ services:
       vlan10:
         ipv4_address: "192.168.10.47"
   opensearch-node2:
-    image: opensearchproject/opensearch:1.0.1
+    image: opensearchproject/opensearch:1.2.4
     restart: unless-stopped
     container_name: opensearch-node2
     environment:
@@ -57,7 +57,7 @@ services:
       vlan10:
         ipv4_address: "192.168.10.48"
   opensearch-node3:
-    image: opensearchproject/opensearch:1.0.1
+    image: opensearchproject/opensearch:1.2.4
     restart: unless-stopped
     container_name: opensearch-node3
     environment:
@@ -85,7 +85,7 @@ services:
       vlan10:
         ipv4_address: "192.168.10.49"
   opensearch-dashboards:
-    image: opensearchproject/opensearch-dashboards:1.0.1
+    image: opensearchproject/opensearch-dashboards:1.2.4
     restart: unless-stopped
     container_name: opensearch-dashboards
     ports:
