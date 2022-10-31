@@ -1,6 +1,28 @@
 version: '2.4'
 services:
-
+  haproxy02:
+    image: haproxy:latest
+    container_name: haproxy02
+    restart: unless-stopped
+    user: root
+    ports:
+      - 443:443
+      - 80:80
+      - 9000:9000
+      - 6443:6443
+      - 22623:22623
+    volumes:
+      - type: bind
+        source: /zfs_master/docker/data/haproxy/haproxy.cfg
+        target: /usr/local/etc/haproxy/haproxy.cfg
+        read_only: true
+      - type: bind
+        source: /zfs_master/docker/data/haproxy/certs
+        target: /usr/local/etc/haproxy/certs
+        read_only: true
+    networks:
+      vlan10:
+        ipv4_address: 192.168.10.41
   nginx01:
     image: nginx:latest
     container_name: nginx01
