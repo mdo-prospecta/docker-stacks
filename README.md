@@ -5,7 +5,6 @@
 | :--            |       :--:      |
 | haproxy01      | 192.168.10.40   |
 | postgres14     | 192.168.10.43   |
-| pgadmin4       | 192.168.10.44   |
 | rabbitmq01     | 192.168.10.45   |
 | rabbitmq02     | 192.168.10.46   |
 | opensearch01   | 192.168.10.47   |
@@ -13,6 +12,8 @@
 | opensearch03   | 192.168.10.49   |
 | kibana         | 192.168.10.50   |
 | sftp           | 192.168.10.51   |
+| awscli.        | 192.168.10.52   |
+| pgadmin4       | 192.168.10.53   |
 
 # Bloodstone
 | Container      |       IP        |
