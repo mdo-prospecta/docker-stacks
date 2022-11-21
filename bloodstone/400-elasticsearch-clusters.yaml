@@ -21,7 +21,7 @@ services:
         source: /zfs_master/docker/data/es01
         target: /usr/share/elasticsearch/data
       - type: bind
-        source: /zfs_master/share/es79-repository
+        source: /glusterfs/vols/share/es79-repository
         target: /snapshot_repository
     ports:
       - 9200:9200
@@ -49,7 +49,7 @@ services:
         source: /zfs_master/docker/data/es02
         target: /usr/share/elasticsearch/data
       - type: bind
-        source: /zfs_master/share/es79-repository
+        source: /glusterfs/vols/share/es79-repository
         target: /snapshot_repository
     networks:
       vlan10:
@@ -75,7 +75,7 @@ services:
         source: /zfs_master/docker/data/es03
         target: /usr/share/elasticsearch/data
       - type: bind
-        source: /zfs_master/share/es79-repository
+        source: /glusterfs/vols/share/es79-repository
         target: /snapshot_repository
     networks:
       vlan10:
