@@ -34,7 +34,7 @@ services:
       - "5050:80"
     networks:
       vlan10:
-        ipv4_address: "192.168.10.44"
+        ipv4_address: "192.168.10.53"
     
 networks:
   vlan10:
