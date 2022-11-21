@@ -29,6 +29,9 @@ services:
       - PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "5050:80"
+    networks:
+      vlan10:
+        ipv4_address: "192.168.10.44"
         
 networks:
   vlan10:
