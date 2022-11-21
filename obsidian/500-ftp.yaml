@@ -14,6 +14,14 @@ services:
     networks:
       vlan10:
         ipv4_address: "192.168.10.51"
+        
+  awscli:
+    image: amazon/aws-cli
+    container_name: awscli
+    restart: unless-stopped
+    networks:
+      vlan10:
+        ipv4_address: "192.168.10.52"
     
 networks:
   vlan10:
