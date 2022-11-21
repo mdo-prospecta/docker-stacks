@@ -9,7 +9,7 @@ services:
     command: ${SFTP_USERNAME:?err}:${SFTP_PASSWORD:?err}:1001
     volumes:
       - type: bind
-        source: /zfs_master/share
+        source: /glusterfs/vols/share
         target: /home/${SFTP_USERNAME:?err}/share
     networks:
       vlan10:
