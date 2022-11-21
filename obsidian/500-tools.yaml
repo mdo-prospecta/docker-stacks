@@ -20,6 +20,10 @@ services:
     container_name: awscli
     restart: unless-stopped
     entrypoint: tail -f /dev/null
+    volumes:
+      - type: bind
+        source: /glusterfs/vols/share
+        target: /glusterfs/share
     networks:
       vlan10:
         ipv4_address: "192.168.10.52"
