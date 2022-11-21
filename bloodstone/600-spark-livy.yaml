@@ -12,7 +12,7 @@ services:
       - "6066:6066"
     volumes:
       - type: bind
-        source: /zfs_master/share/spark
+        source: /glusterfs/vols/share/spark
         target: /opt/share
     networks: 
       vlan10:
@@ -28,7 +28,7 @@ services:
       - SPARK_MASTER=spark://spark-master:7077
     volumes:
       - type: bind
-        source: /zfs_master/share/spark
+        source: /glusterfs/vols/share/spark
         target: /opt/share
     networks: 
       vlan10:
@@ -44,7 +44,7 @@ services:
       - SPARK_MASTER=spark://spark-master:7077
     volumes:
       - type: bind
-        source: /zfs_master/share/spark
+        source: /glusterfs/vols/share/spark
         target: /opt/share
     networks: 
       vlan10:
