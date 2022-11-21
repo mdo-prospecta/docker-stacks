@@ -19,6 +19,7 @@ services:
     image: amazon/aws-cli
     container_name: awscli
     restart: unless-stopped
+    entrypoint: tail -f /dev/null
     networks:
       vlan10:
         ipv4_address: "192.168.10.52"
