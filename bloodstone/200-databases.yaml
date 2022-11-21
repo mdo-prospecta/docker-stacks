@@ -14,8 +14,8 @@ services:
         source: /zfs_master/docker/data/mssql2019
         target: /var/opt/mssql/data
       - type: bind
-        source: /zfs_master/share
-        target: /zfs_share
+        source: /glusterfs/vols/share
+        target: /glusterfs/share
         read_only: true
     networks:
       vlan10:
