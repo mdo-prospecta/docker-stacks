@@ -2,7 +2,7 @@ version: '3'
 services:
   sftp:
     image: atmoz/sftp
-    container_name: sftp_obsidian
+    container_name: sftp
     restart: unless-stopped
     ports:
       - "2222:22"
@@ -28,7 +28,7 @@ services:
       vlan10:
         ipv4_address: "192.168.10.52"
   
-  pgadmin:
+  pgadmin4:
     restart: unless-stopped
     image: dpage/pgadmin4
     container_name: pgadmin4
