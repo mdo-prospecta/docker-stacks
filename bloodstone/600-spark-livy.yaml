@@ -17,11 +17,11 @@ services:
     networks: 
       vlan10:
         ipv4_address: "192.168.10.106"
-  spark-worker-1:
+  spark-worker-01:
     image: prospecta/spark-livy
     restart: unless-stopped
-    container_name: spark-worker1
-    hostname: spark-worker
+    container_name: spark-worker-01
+    hostname: spark-worker-01
     ports:
       - "8081:8081"
     environment:   
@@ -33,11 +33,11 @@ services:
     networks: 
       vlan10:
         ipv4_address: "192.168.10.92"
-  spark-worker-2:
+  spark-worker-02:
     image: prospecta/spark-livy
     restart: unless-stopped
-    container_name: spark-worker2
-    hostname: spark-worker2
+    container_name: spark-worker-02
+    hostname: spark-worker-02
     ports:
       - "8081:8081"
     environment:
