@@ -7,8 +7,8 @@ services:
     environment:
       - cluster.name=opensearch-cluster
       - node.name=opensearch-node3
-      - discovery.seed_hosts=opensearch-node1,opensearch-node2,opensearch-node3
-      - cluster.initial_master_nodes=opensearch-node1,opensearch-node2,opensearch-node3
+      - discovery.seed_hosts=192.168.10.47,192.168.10.48,192.168.10.49
+      - cluster.initial_master_nodes=192.168.10.47,192.168.10.48,192.168.10.49
       - bootstrap.memory_lock=true
       - "OPENSEARCH_JAVA_OPTS=-Xms2048m -Xmx2048m"
     ulimits:
