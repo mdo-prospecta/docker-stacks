@@ -1,8 +1,8 @@
 version: '2.4'
 services:
-  haproxy02:
+  haproxy-02:
     image: haproxy:latest
-    container_name: haproxy02
+    container_name: haproxy-02
     restart: unless-stopped
     user: root
     ports:
@@ -23,9 +23,9 @@ services:
     networks:
       vlan10:
         ipv4_address: 192.168.10.41
-  nginx01:
+  nginx-01:
     image: nginx:latest
-    container_name: nginx01
+    container_name: nginx-01
     restart: unless-stopped
     ports:
       - 443:443
@@ -55,9 +55,9 @@ services:
       vlan10:
         ipv4_address: 192.168.10.81
         
-  nginx02:
+  nginx-02:
     image: nginx:latest
-    container_name: nginx02
+    container_name: nginx-02
     restart: unless-stopped
     ports:
       - 443:443
