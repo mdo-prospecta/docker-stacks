@@ -1,9 +1,9 @@
 version: '3'
 services:
-  postgres14:
+  postgres14-01:
     restart: unless-stopped
     image: postgres:14
-    container_name: postgres14
+    container_name: postgres14-01
     ports:
         - 5432:5432
     environment:
