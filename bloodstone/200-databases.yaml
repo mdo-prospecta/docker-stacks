@@ -1,5 +1,25 @@
 version: '3'
 services:
+  postgres14-02:
+    restart: unless-stopped
+    image: postgres:14
+    container_name: postgres14-02
+    ports:
+        - 5432:5432
+    environment:
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?err}
+    volumes:
+      - type: bind
+        source: /zfs_master/docker/data/postgres14
+        target: /var/lib/postgresql/data
+      - type: bind
+        source: /glusterfs/vols/share
+        target: /glusterfs/share
+        read_only: true
+    networks:
+      vlan10:
+        ipv4_address: "192.168.10.44"
+        
   mssql2019:
     restart: unless-stopped
     image: mcr.microsoft.com/mssql/server:2019-latest
