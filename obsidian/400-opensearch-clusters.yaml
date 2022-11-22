@@ -31,37 +31,6 @@ services:
     networks:
       vlan10:
         ipv4_address: "192.168.10.47"
-  opensearch-node2:
-    image: opensearchproject/opensearch:1.2.4
-    restart: unless-stopped
-    container_name: opensearch-node2
-    environment:
-      - cluster.name=opensearch-cluster
-      - node.name=opensearch-node2
-      - discovery.seed_hosts=192.168.10.47,192.168.10.48,192.168.10.49
-      - cluster.initial_master_nodes=192.168.10.47,192.168.10.48,192.168.10.49
-      - bootstrap.memory_lock=true
-      - "OPENSEARCH_JAVA_OPTS=-Xms2048m -Xmx2048m"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-      nofile:
-        soft: 65536
-        hard: 65536
-    ports:
-      - 9200:9200
-      - 9600:9600 # required for Performance Analyzer
-    volumes:
-      - type: bind
-        source: /zfs_master/docker/data/os02
-        target: /usr/share/opensearch/data
-      - type: bind
-        source: /glusterfs/vols/share/os-repository
-        target: /snapshot_repository
-    networks:
-      vlan10:
-        ipv4_address: "192.168.10.48"
   opensearch-dashboards:
     image: opensearchproject/opensearch-dashboards:1.2.0
     restart: unless-stopped
