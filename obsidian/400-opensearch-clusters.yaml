@@ -11,6 +11,7 @@ services:
       - cluster.initial_master_nodes=192.168.10.47,192.168.10.48,192.168.10.49
       - bootstrap.memory_lock=true # along with the memlock settings below, disables swapping
       - "OPENSEARCH_JAVA_OPTS=-Xms2048m -Xmx2048m" # minimum and maximum Java heap size, recommend setting both to 50% of system RAM
+      - path.repo=/glusterfs/share/os-repository
     ulimits:
       memlock:
         soft: -1
