@@ -25,6 +25,9 @@ services:
       - type: bind
         source: /zfs_master/docker/data/os101/os01
         target: /usr/share/opensearch/data
+      - type: bind
+        source: /glusterfs/vols/share/os-repository
+        target: /snapshot_repository
     networks:
       vlan10:
         ipv4_address: "192.168.10.47"
@@ -53,6 +56,9 @@ services:
       - type: bind
         source: /zfs_master/docker/data/os101/os02
         target: /usr/share/opensearch/data
+      - type: bind
+        source: /glusterfs/vols/share/os-repository
+        target: /snapshot_repository
     networks:
       vlan10:
         ipv4_address: "192.168.10.48"
@@ -81,6 +87,9 @@ services:
       - type: bind
         source: /zfs_master/docker/data/os101/os03
         target: /usr/share/opensearch/data
+      - type: bind
+        source: /glusterfs/vols/share/os-repository
+        target: /snapshot_repository
     networks:
       vlan10:
         ipv4_address: "192.168.10.49"
