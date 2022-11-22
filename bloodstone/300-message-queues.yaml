@@ -1,9 +1,9 @@
 version: "3.2"
 services:
-  rabbitmq01:
+  rabbitmq-01:
     restart: unless-stopped
     image: rabbitmq:3.7-alpine
-    container_name: rabbitmq01
+    container_name: rabbitmq-01
     hostname: rabbitmq01
     command: bash -c "rabbitmq-plugins enable rabbitmq_management rabbitmq_stomp && rabbitmq-server"
     environment:
@@ -19,10 +19,10 @@ services:
     networks:
       vlan10:
         ipv4_address: "192.168.10.85"
-  rabbitmq02:
+  rabbitmq-02:
     restart: unless-stopped
     image: rabbitmq:3.7-alpine
-    container_name: rabbitmq02
+    container_name: rabbitmq-02
     hostname: rabbitmq02
     command: bash -c "rabbitmq-plugins enable rabbitmq_management rabbitmq_stomp && rabbitmq-server"
     environment:
