@@ -1,0 +1,13 @@
+version: '2.4'
+        
+networks:
+  vlan10:
+    name: vlan10
+    driver: macvlan
+    driver_opts:
+      parent: bridge10
+    ipam:
+      config:
+        - subnet: "192.168.10.0/24"
+          ip_range: "192.168.10.1/24"
+          gateway: "192.168.10.1"
