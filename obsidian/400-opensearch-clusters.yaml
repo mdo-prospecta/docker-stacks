@@ -23,7 +23,7 @@ services:
       - 9600:9600 # required for Performance Analyzer
     volumes:
       - type: bind
-        source: /zfs_master/docker/data/os101/os01
+        source: /zfs_master/docker/data/os01
         target: /usr/share/opensearch/data
       - type: bind
         source: /glusterfs/vols/share/os-repository
@@ -54,7 +54,7 @@ services:
       - 9600:9600 # required for Performance Analyzer
     volumes:
       - type: bind
-        source: /zfs_master/docker/data/os101/os02
+        source: /zfs_master/docker/data/os02
         target: /usr/share/opensearch/data
       - type: bind
         source: /glusterfs/vols/share/os-repository
