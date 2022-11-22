@@ -1,36 +1,40 @@
 # Prospecta On Prem Docker Stacks
 
-# Obsidian
-| Container      |       IP        |
-| :--            |       :--:      |
-| haproxy01      | 192.168.10.40   |
-| postgres14     | 192.168.10.43   |
-| rabbitmq01     | 192.168.10.45   |
-| rabbitmq02     | 192.168.10.46   |
-| opensearch01   | 192.168.10.47   |
-| opensearch02   | 192.168.10.48   |
-| opensearch03   | 192.168.10.49   |
-| kibana         | 192.168.10.50   |
-| sftp           | 192.168.10.51   |
-| awscli.        | 192.168.10.52   |
-| pgadmin4       | 192.168.10.53   |
-
-# Bloodstone
-| Container      |       IP        |
-| :--            |       :--:      |
-| haproxy02      | 192.168.10.41   |
-| nginx01        | 192.168.10.81   |
-| nginx02        | 192.168.10.82   |
-| mssql2019      | 192.168.10.84   |
-| rabbitmq01     | 192.168.10.85   |
-| rabbitmq02     | 192.168.10.86   |
-| elastic79      | 192.168.10.87   |
-| elastic79      | 192.168.10.88   |
-| elastic79      | 192.168.10.89   |
-| sftp           | 192.168.10.91   |
-| spark-livy     | 192.168.10.106  |
-| spark-worker1  | 192.168.10.92   |
-| spark-worker2  | 192.168.10.93   |
+| Service               | Name                  | Server     | IP             |
+| --------------------- | --------------------- | ---------- | -------------- |
+| haproxy               | haproxy-01            | obsidian   | 192.168.10.40  |
+| haproxy               | haproxy-02            | bloodstone | 192.168.10.41  |
+| haproxy               | haproxy-03            | amethyst   | 192.168.10.42  |
+|                       |                       |            |                |
+| postgresql            | postgres14-01         | obsidian   | 192.168.10.43  |
+| postgresql            | postgres14-02         | bloodstone | 192.168.10.44  |
+|                       |                       |            |                |
+| rabbitmq              | rabbitmq-01           | bloodstone | 192.168.10.85  |
+| rabbitmq              | rabbitmq-02           | bloodstone | 192.168.10.86  |
+|                       |                       |            |                |
+| mssql                 | mssql2019             | bloodstone | 192.168.10.84  |
+|                       |                       |            |                |
+| elasticsearch         | es01                  | bloodstone | 192.168.10.87  |
+| elasticsearch         | es02                  | bloodstone | 192.168.10.88  |
+| elasticsearch         | es03                  | bloodstone | 192.168.10.89  |
+|                       |                       |            |                |
+| sftp                  | sftp                  | obsidian   | 192.168.10.51  |
+|                       |                       |            |                |
+| opensearch            | opensearch-node1      | obsidian   | 192.168.10.47  |
+| opensearch            | opensearch-node2      | bloodstone | 192.168.10.48  |
+| opensearch            | opensearch-node3      | amethyst   | 192.168.10.49  |
+| opensearch-dashboards | opensearch-dashboards | obsidian   | 192.168.10.50  |
+|                       |                       |            |                |
+| awscli                | awscli                | obsidian   | 192.168.10.52  |
+|                       |                       |            |                |
+| pgadmin4              | pgadmin4              | obsidian   | 192.168.10.53  |
+|                       |                       |            |                |
+| nginx                 | nginx-01              | bloodstone | 192.168.10.81  |
+| nginx                 | nginx-02              | bloodstone | 192.168.10.82  |
+|                       |                       |            |                |
+| spark-master          | spark-master          | bloodstone | 192.168.10.106 |
+| spark-worker          | spark-worker-01       | bloodstone | 192.168.10.92  |
+| spark-worker          | spark-worker-02       | bloodstone | 192.168.10.93  |
 
 
 # Running portainer on host networking mode
