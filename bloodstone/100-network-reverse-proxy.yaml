@@ -48,7 +48,7 @@ services:
         target: /etc/nginx/templates
         read_only: true
       - type: bind
-        source: /zfs_master/share
+        source: /glusterfs/vols/share
         target: /etc/nginx/html/share
         read_only: true
     networks:
@@ -80,7 +80,7 @@ services:
         target: /etc/nginx/templates
         read_only: true
       - type: bind
-        source: /zfs_master/share
+        source: /glusterfs/vols/share
         target: /etc/nginx/html/share
         read_only: true
     networks:
