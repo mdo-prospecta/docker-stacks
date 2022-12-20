@@ -10,7 +10,7 @@ services:
       - discovery.seed_hosts=192.168.10.47,192.168.10.48,192.168.10.49
       - cluster.initial_master_nodes=192.168.10.47,192.168.10.48,192.168.10.49
       - bootstrap.memory_lock=true
-      - "OPENSEARCH_JAVA_OPTS=-Xms2048m -Xmx2048m"
+      - "OPENSEARCH_JAVA_OPTS=-Xms8192m -Xmx8192m"
       - path.repo=/snapshot_repository
     ulimits:
       memlock:
