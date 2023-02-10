@@ -20,26 +20,26 @@ services:
       vlan10:
         ipv4_address: "192.168.10.44"
         
-  mssql2019:
-    restart: unless-stopped
-    image: mcr.microsoft.com/mssql/server:2019-latest
-    container_name: mssql2019
-    ports:
-        - 1433:1433
-    environment:
-        - ACCEPT_EULA=Y
-        - SA_PASSWORD=${MSSQL_PASSWORD:?err}
-    volumes:
-      - type: bind
-        source: /zfs_master/docker/data/mssql2019
-        target: /var/opt/mssql/data
-      - type: bind
-        source: /glusterfs/vols/share
-        target: /glusterfs/share
-        read_only: true
-    networks:
-      vlan10:
-        ipv4_address: "192.168.10.84"
+#  mssql2019:
+#    restart: unless-stopped
+#    image: mcr.microsoft.com/mssql/server:2019-latest
+#    container_name: mssql2019
+#    ports:
+#        - 1433:1433
+#    environment:
+#        - ACCEPT_EULA=Y
+#        - SA_PASSWORD=${MSSQL_PASSWORD:?err}
+#    volumes:
+#      - type: bind
+#        source: /zfs_master/docker/data/mssql2019
+#        target: /var/opt/mssql/data
+#      - type: bind
+#        source: /glusterfs/vols/share
+#        target: /glusterfs/share
+#        read_only: true
+#    networks:
+#      vlan10:
+#        ipv4_address: "192.168.10.84"
         
 networks:
   vlan10:
