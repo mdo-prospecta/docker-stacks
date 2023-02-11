@@ -2,7 +2,7 @@ version: '2.4'
 services:
   haproxy-02:
     image: haproxy:latest
-    container_name: haproxy-02
+    container_name: haproxy
     restart: unless-stopped
     user: root
     ports:
@@ -22,7 +22,7 @@ services:
         read_only: true
     networks:
       vlan10:
-        ipv4_address: 192.168.10.41
+        ipv4_address: 192.168.10.40
   nginx-01:
     image: nginx:latest
     container_name: nginx-01
