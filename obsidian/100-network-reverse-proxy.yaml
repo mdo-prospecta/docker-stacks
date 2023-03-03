@@ -1,7 +1,7 @@
 version: '2.4'
 services:
   haproxy-01:
-    image: haproxy:latest
+    image: haproxy:lts
     container_name: haproxy
     restart: unless-stopped
     user: root
