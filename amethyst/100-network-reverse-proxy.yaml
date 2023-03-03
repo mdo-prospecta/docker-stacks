@@ -22,7 +22,7 @@ services:
         read_only: true
     networks:
       vlan10:
-        ipv4_address: 192.168.10.40
+        ipv4_address: 192.168.10.39
         
 networks:
   vlan10:
