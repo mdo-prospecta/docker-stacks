@@ -10,7 +10,7 @@ services:
       - discovery.seed_hosts=192.168.10.47,192.168.10.48,192.168.10.49
       - cluster.initial_master_nodes=192.168.10.47,192.168.10.48,192.168.10.49
       - bootstrap.memory_lock=true # along with the memlock settings below, disables swapping
-      - "OPENSEARCH_JAVA_OPTS=-Xms8192m -Xmx8192m" # minimum and maximum Java heap size, recommend setting both to 50% of system RAM
+      - "OPENSEARCH_JAVA_OPTS=-Xms21000m -Xmx21000m" # minimum and maximum Java heap size, recommend setting both to 50% of system RAM
       - path.repo=/snapshot_repository
     ulimits:
       memlock:
