@@ -28,6 +28,9 @@ services:
         source: /zfs_master/docker/data/os03
         target: /usr/share/opensearch/data
       - type: bind
+        source: /zfs_master/docker/data/os03_config/log4j2.properties
+        target: /usr/share/opensearch/config/log4j2.properties
+      - type: bind
         source: /glusterfs/vols/share/os-repository
         target: /snapshot_repository
     networks:
