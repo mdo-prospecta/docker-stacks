@@ -7,8 +7,6 @@ services:
     environment:
       - node.name=es56x1
       - cluster.name=${ES_CLUSTER_NAME:?err}
-      - discovery.seed_hosts=es56x2
-      - cluster.initial_master_nodes=es56x1,es56x2
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms8192m -Xmx8192m"
     ulimits:
@@ -28,8 +26,7 @@ services:
     environment:
       - node.name=es56x2
       - cluster.name=${ES_CLUSTER_NAME:?err}
-      - discovery.seed_hosts=es56x1
-      - cluster.initial_master_nodes=es56x1,es56x2
+      - discovery.zen.ping.unicast.hosts=es56x1
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms8192m -Xmx8192m"
     ulimits:
