@@ -12,7 +12,7 @@
 | rabbitmq              | rabbitmq-01           | bloodstone | 192.168.10.85  |
 | rabbitmq              | rabbitmq-02           | bloodstone | 192.168.10.86  |
 |                       |                       |            |                |
-| mssql                 | mssql2019             | bloodstone | 192.168.10.84  |
+| pghero                | pghero                | bloodstone | 192.168.10.84  |
 |                       |                       |            |                |
 | elasticsearch         | es01                  | bloodstone | 192.168.10.87  |
 | elasticsearch         | es02                  | bloodstone | 192.168.10.88  |
