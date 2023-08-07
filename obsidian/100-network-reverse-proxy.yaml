@@ -13,11 +13,11 @@ services:
       - 22623:22623
     volumes:
       - type: bind
-        source: /glusterfs/vols/haproxy/haproxy.cfg
+        source: /zfs_master/gluster_bricks/haproxy/haproxy.cfg
         target: /usr/local/etc/haproxy/haproxy.cfg
         read_only: true
       - type: bind
-        source: /glusterfs/vols/haproxy/certs
+        source: /zfs_master/gluster_bricks/haproxy/certs
         target: /usr/local/etc/haproxy/certs
         read_only: true
     networks:
