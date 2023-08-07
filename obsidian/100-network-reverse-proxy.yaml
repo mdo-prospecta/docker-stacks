@@ -22,16 +22,16 @@ services:
         read_only: true
     networks:
       vlan10:
-        ipv4_address: 192.168.10.40
+        ipv4_address: 192.168.0.40
         
 networks:
   vlan10:
     name: vlan10
     driver: macvlan
     driver_opts:
-      parent: bridge10
+      parent: br0
     ipam:
       config:
-        - subnet: "192.168.10.0/24"
-          ip_range: "192.168.10.1/24"
-          gateway: "192.168.10.1"
+        - subnet: "192.168.0.0/24"
+          ip_range: "192.168.0.1/24"
+          gateway: "192.168.0.1"
