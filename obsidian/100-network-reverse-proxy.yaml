@@ -20,14 +20,3 @@ services:
         source: /zfs_master/gluster_bricks/haproxy/certs
         target: /usr/local/etc/haproxy/certs
         read_only: true
-    networks:
-      network:
-        ipv4_address: 192.168.10.40
-        
-networks:
-  network:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: "192.168.10.0/24"
-          gateway: "192.168.10.1"
