@@ -26,11 +26,5 @@ services:
         
 networks:
   vlan10:
-    name: vlan10
-    driver: overlay
-    driver_opts:
-      parent: br0
-    ipam:
-      config:
-        - subnet: "192.168.10.0/24"
-          gateway: "192.168.10.1"
+    name: host
+    external: true
