@@ -21,15 +21,12 @@ services:
         target: /usr/local/etc/haproxy/certs
         read_only: true
     networks:
-      vlan10:
+      network:
         ipv4_address: 192.168.10.40
         
 networks:
-  vlan10:
-    name: vlan10
-    driver: macvlan
-    driver_opts:
-      parent: br0
+  network:
+    driver: bridge
     ipam:
       config:
         - subnet: "192.168.10.0/24"
