@@ -27,7 +27,7 @@ services:
 networks:
   vlan10:
     name: vlan10
-    driver: macvlan
+    driver: ipvlan
     driver_opts:
       parent: br0
     ipam:
